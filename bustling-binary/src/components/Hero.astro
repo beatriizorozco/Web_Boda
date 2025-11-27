@@ -1,0 +1,33 @@
+---
+import {Image} from "astro:assets";
+import imagenJulioAndrea from "./public/fotoJulioAndrea.webp";
+---
+<div class="hero">
+    <h1>¡Nos casamos!</h1>
+    <Image src = {imagenJulioAndrea} alt="Foto de Julio y Andrea con el sol de cara" width={800}/>
+</div>
+
+<style>
+    .hero {
+        width:100vw;
+        height:100vh;
+        background-color: #b0b39c;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
+    }
+    .hero h1 {
+        font-size: 10rem;
+        color: #4a403a;
+        margin-bottom: 2rem;
+        font-family: "Imperial Script", cursive;
+        font-weight: 550;
+        font-style: normal;
+    }
+    .hero img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
