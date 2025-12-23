@@ -1,0 +1,165 @@
+---
+import Button from "./Button.astro";
+---
+
+<main>
+    <h2 class="fecha">Sábado, 23 de mayo de 2026 · 13:00 h</h2>
+
+    <section class="lugares">
+        <!-- CEREMONIA -->
+        <div class="lugar">
+            <img
+                src="/parroquia.webp"
+                alt="Parroquia de la ceremonia"
+                class="lugar-img"
+            />
+
+            <h3>Ceremonia</h3>
+            <p class="direccion">
+                Av. de Burgos, 12,<br />
+                Chamartín, 28036 Madrid
+            </p>
+
+            <Button
+                url="https://maps.app.goo.gl/7j1RjUwrwnSJxU9m7"
+                text="Cómo llegar"
+            />
+        </div>
+
+        <!-- BANQUETE -->
+        <div class="lugar">
+            <img
+                src="/banquete.webp"
+                alt="Lugar del banquete"
+                class="lugar-img"
+            />
+
+            <h3>Banquete</h3>
+            <p class="direccion">
+                Almte. Marqués de Valterra, 6,<br />
+                28250 Torrelodones, Madrid
+            </p>
+
+            <Button
+                url="https://maps.app.goo.gl/wFE1dBgDovDkoN4D7"
+                text="Cómo llegar"
+            />
+        </div>
+    </section>
+</main>
+
+<style>
+    main {
+        text-align: center;
+        background-color: #fffaf9;
+        margin: 0;
+        width: 100vw;
+        padding: clamp(32px, 6vh, 80px) 16px;
+    }
+
+    /* FECHA */
+    .fecha {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(20px, 3vw, 28px);
+        letter-spacing: 0.12em;
+        margin-bottom: 48px;
+        color: #3f3a36;
+    }
+
+    /* CONTENEDOR */
+    .lugares {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(32px, 6vw, 80px);
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .lugares::after {
+        content: "";
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        left: 50%;
+        width: 1px;
+        background: rgba(63, 58, 54, 0.15);
+    }
+
+    /* BLOQUE CEREMONIA / BANQUETE */
+    .lugar h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #3f3a36;
+    }
+
+    .direccion {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: rgba(63, 58, 54, 0.75);
+    }
+    /* IMÁGENES DE LUGAR */
+    .lugar-img {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 24px;
+        display: block;
+
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 14px;
+
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+
+        /* DESVANECIDO INFERIOR */
+        mask-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 88%,
+            rgba(0, 0, 0, 0.35) 96%,
+            rgba(0, 0, 0, 0) 100%
+        );
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+        .fecha {
+            margin-bottom: 28px;
+            font-size: 16px;
+            letter-spacing: 0.1em;
+        }
+
+        .lugares {
+            gap: 28px;
+        }
+
+        /* ✅ fotos más pequeñas */
+        .lugar-img {
+            max-width: 310px; /* antes se veía enorme */
+            aspect-ratio: 16 / 10; /* más “banner”, menos postal */
+            margin-bottom: 14px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+
+            /* si aún usas mask-image, que sea sutil */
+            mask-image: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 1) 92%,
+                rgba(0, 0, 0, 0.55) 98%,
+                rgba(0, 0, 0, 0) 100%
+            );
+        }
+
+        .lugar h3 {
+            font-size: 1.15rem;
+            margin-top: 6px;
+        }
+
+        .direccion {
+            font-size: 0.82rem;
+            margin-bottom: 14px;
+        }
+    }
+</style>

@@ -1,0 +1,40 @@
+---
+interface Props {
+    url: string;
+    text: string;
+}
+const { url, text } = Astro.props;
+---
+
+<a href={url} class="btn">
+    {text}
+</a>
+
+<style>
+    .btn {
+        display: inline-block;
+        padding: 12px 28px;
+
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+
+        color: #3f3a36;
+        background-color: #FFFAF9;
+
+        border: 1px solid rgba(63, 58, 54, 0.25);
+        border-radius: 999px; /* elegante, tipo píldora */
+
+        text-decoration: none;
+        transition: all 0.25s ease;
+        margin-right: 12px;
+        margin-bottom: 12px;
+    }
+
+    .btn:hover {
+        background-color: rgba(63, 58, 54, 0.06);
+        border-color: rgba(63, 58, 54, 0.45);
+        transform: translateY(-1px);
+    }
+</style>

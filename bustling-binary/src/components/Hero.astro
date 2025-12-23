@@ -1,33 +1,157 @@
 ---
-import {Image} from "astro:assets";
-import imagenJulioAndrea from "./public/fotoJulioAndrea.webp";
+const imagen = "/fotoJulioAndrea.webp";
 ---
-<div class="hero">
-    <h1>¡Nos casamos!</h1>
-    <Image src = {imagenJulioAndrea} alt="Foto de Julio y Andrea con el sol de cara" width={800}/>
-</div>
+
+<section class="hero">
+    <div class="hero__content">
+        <h1 class="hero__title">Julio & Andrea</h1>
+        <p class="hero__subtitle">Nos casamos</p>
+    </div>
+
+    <div class="hero__media">
+        <img class="hero__img" src={imagen} alt="Foto de Julio y Andrea" />
+    </div>
+
+    <div class="hero__overlay"></div>
+</section>
 
 <style>
+    /* ================= BASE ================= */
     .hero {
-        width:100vw;
-        height:100vh;
-        background-color: #b0b39c;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        flex-direction: column;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  overflow: hidden;
+  background: #FFFAF9;
     }
-    .hero h1 {
-        font-size: 10rem;
-        color: #4a403a;
-        margin-bottom: 2rem;
-        font-family: "Imperial Script", cursive;
-        font-weight: 550;
-        font-style: normal;
+
+    .hero__media {
+        position: absolute;
+        inset: 0;
     }
-    .hero img {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .hero__img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center 38%;
+    }
+
+    /* overlay pastel (más “color” y menos blanco plano) */
+    .hero__overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+
+        background:
+            radial-gradient(
+                900px 500px at 18% 18%,
+                rgba(255, 230, 236, 0.55),
+                rgba(255, 230, 236, 0) 60%
+            ),
+            radial-gradient(
+                800px 480px at 85% 15%,
+                rgba(210, 226, 255, 0.45),
+                rgba(210, 226, 255, 0) 55%
+            ),
+            linear-gradient(
+                to bottom,
+                rgba(255, 250, 249, 0.65),
+                rgba(255, 250, 249, 0.25)
+            );
+
+        /* 👇 AQUÍ mandas tú */
+        opacity: 0.25;
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 1;
+        max-width: 1100px;
+
+        /* texto encima, izquierda */
+        padding-top: clamp(26px, 6vh, 90px);
+        padding-left: clamp(16px, 6vw, 80px);
+        padding-right: clamp(16px, 4vw, 48px);
+    }
+
+    .hero__title {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        color: rgba(40, 35, 32, 0.88);
+        text-transform: uppercase;
+        font-size: clamp(34px, 5.2vw, 78px);
+        line-height: 0.92;
+
+        /* ✅ ayuda a legibilidad sin “caja” fea */
+        text-shadow: 0 10px 30px rgba(255, 250, 249, 0.9);
+    }
+
+    .hero__subtitle {
+        margin: 10px 0 0;
+        font-family: "Montserrat", sans-serif;
+        font-size: clamp(11px, 2vw, 16px);
+        font-weight: 300;
+        letter-spacing: 0.22em;
+        padding-left: 1.3em;
+        text-transform: uppercase;
+        color: rgba(40, 35, 32, 0.75);
+        opacity: 0.75;
+    }
+
+    /* ================= DESKTOP ================= */
+    @media (min-width: 900px) {
+        .hero {
+            height: clamp(520px, 72vh, 860px);
+        }
+        .hero__img {
+            object-position: center 36%;
+        }
+    }
+
+    /* ================= MÓVIL (texto arriba + imagen debajo, NO estrecha) ================= */
+    @media (max-width: 900px) {
+        .hero {
+            height: auto; /* ✅ deja de ser “portada” alta */
+            padding-bottom: 0;
+        }
+
+        .hero__media {
+            position: relative; /* ✅ imagen ya no es fondo absoluto */
+            inset: auto;
+            width: 100%;
+            height: clamp(240px, 36vh, 360px); /* ✅ NO estrecha (más alta) */
+            overflow: hidden;
+        }
+
+        .hero__img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+        }
+
+        .hero__content {
+            padding: 18px 16px 12px;
+            max-width: 100%;
+        }
+
+        .hero__title {
+            font-size: clamp(28px, 8vw, 44px);
+            line-height: 0.95;
+        }
+
+        .hero__subtitle {
+            padding-left: 0;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+        }
     }
 </style>
