@@ -8,7 +8,7 @@ import Button from "./Button.astro";
         <p class="info-secundaria">Madrid</p>
     </header>
 
-    <section class="lugares">
+    <section id="ubicacion" class="lugares">
         <div class="lugar">
             <img
                 src="/parroquia.webp"
@@ -50,7 +50,7 @@ import Button from "./Button.astro";
 
     <hr class="separador" />
 
-    <section class="bloque" id="rsvp">
+    <section id="rsvp" class="bloque">
         <h3>Confirmación de asistencia</h3>
         <p>
             Por favor, confirma tu asistencia antes del <strong
@@ -73,7 +73,7 @@ import Button from "./Button.astro";
 
     <hr class="separador" />
 
-    <section class="bloque" id="lista">
+    <section id="lista" class="bloque">
         <h3>Lista de bodas</h3>
         <p>
             Lo más importante para nosotros es compartir este día con vosotros.
@@ -104,7 +104,7 @@ import Button from "./Button.astro";
         margin: 0;
         width: 100%;
         padding: clamp(32px, 6vh, 80px) 16px;
-        overflow-x: hidden; /* 🔑 elimina desplazamiento */
+        overflow-x: hidden;
     }
 
     .info-rapida {
