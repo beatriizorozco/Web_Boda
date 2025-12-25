@@ -1,0 +1,89 @@
+<svg
+    class="ruta-transporte"
+    viewBox="0 0 1200 240"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-label="Ruta de transporte: Iglesia, Finca, Majadahonda y Madrid"
+>
+    <defs>
+        <style>
+            .ink { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round;
+            stroke-linejoin: round; }
+            .soft { opacity: .55; }
+            .dot { fill: currentColor; opacity: .8; }
+            .label { font: 500 22px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:
+            currentColor; }
+            .sublabel { font: 400 16px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial; fill:
+            currentColor; opacity: .7; }
+        </style>
+    </defs>
+
+    <path class="ink soft"
+        d="M110 115 C 240 45, 360 45, 470 115 S 720 195, 880 115 S 1050 45, 1090 115" />
+
+    <circle class="dot" cx="110" cy="115" r="6" />
+    <circle class="dot" cx="470" cy="115" r="6" />
+    <circle class="dot" cx="820" cy="135" r="6" />
+    <circle class="dot" cx="1090" cy="115" r="6" />
+
+    <g transform="translate(55,40)">
+        <path class="ink" d="M70 85 V40" />
+        <path class="ink" d="M58 52 H82" />
+        <path class="ink" d="M45 85 V58 L70 40 L95 58 V85" />
+        <path class="ink" d="M55 85 V68 H85 V85" />
+        <path class="ink soft" d="M40 85 H100" />
+        <text class="label" x="0" y="140">Ceremonia</text>
+        <text class="sublabel" x="0" y="175">Parroquia</text>
+    </g>
+
+    <g transform="translate(395,40)">
+        <path class="ink" d="M45 85 V58 L75 38 L105 58 V85" />
+        <path class="ink" d="M68 85 V68 H82 V85" />
+        <path class="ink soft" d="M35 85 H120" />
+        <path class="ink" d="M130 85 V60" />
+        <path class="ink" d="M130 60 C120 55,118 45,130 40 C142 45,140 55,130 60 Z" />
+        <text class="label" x="0" y="140">Banquete</text>
+        <text class="sublabel" x="0" y="165">Finca</text>
+    </g>
+
+    <g transform="translate(740,34)">
+        <path class="ink" d="M80 95 C55 75,55 40,80 35 C105 40,105 75,80 95 Z" />
+        <circle class="ink" cx="80" cy="55" r="10" />
+        <path class="ink soft" d="M45 95 H115" />
+        <text class="label" x="0" y="140">Paso</text>
+        <text class="sublabel" x="0" y="175">Majadahonda</text>
+    </g>
+
+    <g transform="translate(1000,34)">
+        <path class="ink soft" d="M0 95 H175" />
+
+        <path class="ink" d="M10 95 V55 H45 V95" />
+        <path class="ink soft" d="M18 63 H25 M30 63 H37" />
+        <path class="ink soft" d="M18 73 H25 M30 73 H37" />
+        <path class="ink soft" d="M18 83 H25 M30 83 H37" />
+
+        <path class="ink" d="M55 95 V38 H95 V95" />
+        <path class="ink" d="M70 38 V28" />
+        <path class="ink" d="M65 28 H75" />
+        <path class="ink soft" d="M62 48 H69 M78 48 H85" />
+        <path class="ink soft" d="M62 58 H69 M78 58 H85" />
+        <path class="ink soft" d="M62 68 H69 M78 68 H85" />
+        <path class="ink soft" d="M62 78 H69 M78 78 H85" />
+        <path class="ink soft" d="M62 88 H69 M78 88 H85" />
+
+        <path class="ink" d="M105 95 V60 H135 V95" />
+        <path class="ink soft" d="M112 70 H118 M122 70 H128" />
+        <path class="ink soft" d="M112 80 H118 M122 80 H128" />
+        <path class="ink soft" d="M112 90 H118 M122 90 H128" />
+
+        <path class="ink" d="M145 95 V48 H170 V95" />
+        <path class="ink soft" d="M152 58 H158 M160 58 H166" />
+        <path class="ink soft" d="M152 68 H158 M160 68 H166" />
+        <path class="ink soft" d="M152 78 H158 M160 78 H166" />
+        <path class="ink" d="M157 95 V82 H163 V95" />
+
+        <text class="label" x="-10" y="140">Fin</text>
+        <text class="sublabel" x="-10" y="165">Madrid</text>
+    </g>
+
+</svg>

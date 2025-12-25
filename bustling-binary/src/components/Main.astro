@@ -53,6 +53,35 @@ import Button from "./Button.astro";
                 text="Cómo llegar"
             />
         </div>
+        
+        <div class="transporte">
+            <h3 class="titulo-transporte">Transporte</h3>
+            <p class="subtexto">
+                Tras la ceremonia, nos desplazaremos a la finca y al finalizar
+                habrá regreso con parada en Majadahonda y destino final Madrid.
+            </p>
+
+            <img
+                src="/ruta-transporte.svg"
+                alt="Ruta de transporte desde la ceremonia hasta Madrid"
+                class="ruta-transporte"
+                loading="lazy"
+            />
+
+            <div class="chips-transporte" aria-label="Detalles de transporte">
+                <span class="chip">
+                    Salida iglesia: <strong>14:15</strong>
+                    <span class="muted">(aprox.)</span>
+                </span>
+                <span class="chip">
+                    Parking en finca: <strong>Sí</strong>
+                </span>
+                <span class="chip">
+                    Vuelta: <strong>22:00/00:00</strong>
+                    <span class="muted">(por confirmar)</span>
+                </span>
+            </div>
+        </div>
     </section>
 
     <hr class="separador" />
@@ -154,8 +183,8 @@ import Button from "./Button.astro";
     .lugares::after {
         content: "";
         position: absolute;
-        top: 10%;
-        bottom: 10%;
+        top: 0%;
+        bottom: 50%;
         left: 50%;
         width: 1px;
         background: rgba(63, 58, 54, 0.15);
@@ -273,6 +302,74 @@ import Button from "./Button.astro";
         margin-top: 4px;
     }
 
+    .ruta-transporte {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 14px auto 0;
+        opacity: 0.95;
+    }
+
+    .transporte {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 24px 0 10px;
+        text-align: center;
+        background-color: #fffaf9;
+        position: relative;
+        z-index: 2;
+    }
+
+    .titulo-transporte {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        margin: 0 0 8px;
+        color: #3f3a36;
+    }
+
+    .subtexto {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: rgba(63, 58, 54, 0.75);
+        max-width: 620px;
+        margin: 0 auto 14px;
+    }
+    
+    .chips-transporte {
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        gap: 12px;
+        margin: 14px auto 0;
+        width: 100%;
+    }
+
+    .chip {
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.78rem;
+        line-height: 1;
+        color: rgba(63, 58, 54, 0.75);
+        padding: 10px 12px;
+        border: 1px solid rgba(63, 58, 54, 0.14);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.55);
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+    }
+
+    .chip strong {
+        font-weight: 600;
+        color: rgba(63, 58, 54, 0.9);
+    }
+
+    .chip .muted {
+        color: rgba(63, 58, 54, 0.55);
+    }
+
     @media (max-width: 600px) {
         .lugares {
             grid-template-columns: 1fr;
@@ -292,6 +389,15 @@ import Button from "./Button.astro";
         .bloque .nota {
             font-size: 0.65rem;
             letter-spacing: 0.1em;
+        }
+        .chips-transporte {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 10px;
+        }
+        .chip {
+            white-space: normal;
+            text-align: center;
         }
     }
 </style>
