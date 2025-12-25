@@ -72,7 +72,10 @@ import Button from "./Button.astro";
         />
 
         <p class="nota">
-            Si tienes cualquier duda, puedes escribirnos directamente.
+            Si tienes cualquier duda, puedes escribirnos directamente a:<br />
+            Andrea (<span class="telefono">+34 608 52 85 70</span>) y Julio (<span
+                class="telefono">+34 648 06 77 52</span
+            >).
         </p>
     </section>
 
@@ -227,6 +230,13 @@ import Button from "./Button.astro";
         text-transform: uppercase;
         color: rgba(63, 58, 54, 0.35);
         margin-top: 18px;
+    }
+
+    .nota .telefono {
+        font-weight: 500;
+        color: rgba(63, 58, 54, 0.75);
+        letter-spacing: 0.08em;
+        white-space: nowrap;
     }
 
     .datos-regalo {
