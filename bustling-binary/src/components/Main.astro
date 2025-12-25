@@ -16,7 +16,11 @@ import Button from "./Button.astro";
                 class="lugar-img"
             />
 
-            <h3>Ceremonia</h3>
+            <h3 class="titulo-lugar">
+                Ceremonia
+                <span>Parroquia Santa María</span>
+            </h3>
+
             <p class="direccion">
                 Av. de Burgos, 12,<br />
                 Chamartín, 28036 Madrid
@@ -35,7 +39,10 @@ import Button from "./Button.astro";
                 class="lugar-img"
             />
 
-            <h3>Banquete</h3>
+            <h3 class="titulo-lugar">
+                Banquete
+                <span>Finca el Gasco</span>
+            </h3>
             <p class="direccion">
                 Almte. Marqués de Valterra, 6,<br />
                 28250 Torrelodones, Madrid
@@ -235,6 +242,23 @@ import Button from "./Button.astro";
         text-decoration: none;
         font-weight: inherit;
         -webkit-touch-callout: none;
+    }
+
+    .titulo-lugar {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #3f3a36;
+        line-height: 1.2;
+    }
+
+    .titulo-lugar span {
+        display: block;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        color: rgba(63, 58, 54, 0.55);
+        margin-top: 4px;
     }
 
     @media (max-width: 600px) {
