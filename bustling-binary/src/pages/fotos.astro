@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 
-const RELEASE_MADRID = "2026-05-23T13:00:00";
+const RELEASE_MADRID = "2025-12-26T05:30:00+02:00";
 ---
 
 <Layout>
@@ -50,39 +50,6 @@ const RELEASE_MADRID = "2026-05-23T13:00:00";
 </Layout>
 
 <script is:inline define:vars={{ RELEASE_MADRID }}>
-	/** @returns {Date} */
-	function madridNow() {
-		const s = new Intl.DateTimeFormat("sv-SE", {
-			timeZone: "Europe/Madrid",
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-			hour: "2-digit",
-			minute: "2-digit",
-			second: "2-digit",
-			hour12: false,
-		}).format(new Date());
-		return new Date(s.replace(" ", "T"));
-	}
-
-	/**
-	 * @param {string} isoLocal
-	 * @returns {Date}
-	 */
-	function madridDate(isoLocal) {
-		const s = new Intl.DateTimeFormat("sv-SE", {
-			timeZone: "Europe/Madrid",
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-			hour: "2-digit",
-			minute: "2-digit",
-			second: "2-digit",
-			hour12: false,
-		}).format(new Date(isoLocal));
-		return new Date(s.replace(" ", "T"));
-	}
-
 	const locked = document.getElementById("locked");
 	const content = document.getElementById("content");
 
@@ -95,8 +62,8 @@ const RELEASE_MADRID = "2026-05-23T13:00:00";
 			host.startsWith("10.") ||
 			host.endsWith(".local");
 
-		const now = madridNow();
-		const release = madridDate(RELEASE_MADRID);
+		const now = new Date();
+		const release = new Date(RELEASE_MADRID);
 
 		if (isLocal || now >= release) {
 			locked.hidden = true;
@@ -104,6 +71,7 @@ const RELEASE_MADRID = "2026-05-23T13:00:00";
 		}
 	}
 </script>
+
 
 <style>
 	.wrap {
